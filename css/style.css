@@ -1,30 +1,38 @@
 /* Reset dan pengaturan dasar */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    background: linear-gradient(135deg, #2c3e50, #bdc3c7);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-  }
-  
-  /* Container game dengan bayangan dan border modern */
-  #game-container {
-    width: 1200px;
-    height: 800px;
-    margin: 40px auto;
-    border: 5px solid #ecf0f1;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    background-color: #444;
-    position: relative;
-  }
-  
-  /* Jika diperlukan, Anda dapat menambahkan style untuk UI atau teks di luar canvas */
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #2c3e50, #bdc3c7);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Header / Title */
+header {
+  margin: 20px;
+}
+
+#game-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 24px;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000;
+  color: #ecf0f1;
+}
+
+/* Container game dengan tampilan modern */
+#game-container {
+  width: 1200px;
+  height: 800px;
+  border: 5px solid #ecf0f1;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  background-color: #444;
+  position: relative;
+}
