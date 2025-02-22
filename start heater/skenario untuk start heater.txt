@@ -1,0 +1,81 @@
+buatkan saya simulasi interaktif untuk heater
+saya sudah membuat folder assets yang berisi :
+actuator.png
+api_burner.png
+api_pilot.png
+background.png
+button_green_down.png
+button_green_up.png
+button_red_down.png
+button_red_up.png
+fan.png
+green_lamp_hidup.png
+green_lamp_mati.png
+red_lamp_hidup.png
+red_lamp_mati.png
+valve_closed.png
+valve_open.png
+
+kemudian folder js untuk script phaser js
+kemudian file index.html.
+
+Sekarang buatkan saya script untuk fungsi fungsi sebagai berikut
+
+actuator.png  4 buah, dan 2 buah dengan rotasi 90 derajat. dengan nama id sebagai berikut :
+1. actuator valve_upstream,main burner
+2. actuator valve downstream main burner
+3. actuator valve upstream pilot
+4. actuator valve downstream main burner
+
+sedangkan 2 lagi yang dirotasi tadi adalah valve blowdown.
+
+api_burner.png posisi x :600     y:335
+api_pilot.png  posisi x :697     y:385
+background.png
+button_green_down.png 
+button_green_up.png buat 5 buah animasikan ke green down jika ditekan
+tombol idnya :
+1. tombol purge jika ditekan akan mengaktifkan animasi fan fan akan hidup selama 8 detik kemudian lampu purge completed akan menyala menandakan purge selesai
+2. tombol LT jika ditekan akan menghidupkan semua lampu, untuk mengecek kondisi lampu indikator
+3. Tombol pilot, jika ditekan maka, valve blowdown pilot akan menutup, valve pilot upstream terbuka disusul dengan valve downstream membuka, kemudian api pilot hidup. tombol ini hanya bisa mengaktifkan valve sekali pencet, jika dipencet lagi tidak akan terjadi apa-apa, kecuali tombol reset dipencet dan semua kondisi akan Kembali pada posisi awal. (beri jeda 2 detik untuk reset)
+4. Tombol main burner, jika ditekan maka akan menutup valve blowdown main burner dan membuka valve upstream main burner disusul dengan valve downstream main burner. tombol ini hanya bisa mengaktifkan valve sekali pencet, jika dipencet lagi tidak akan terjadi apa-apa, kecuali tombol reset dipencet dan semua kondisi akan Kembali pada posisi awal. (beri jeda 2 detik untuk reset)
+5. Tombol reset, tombol ini untuk mereset semua kondisi dan alarm, jika tombol ini ditekan maka semua animasi akan direset keposisi awal lagi. dan sequence harus dilakukan diawal lagi
+button_red_down.png
+button_red_up.png  akan dianimasikan ke button_red_down jika ditekan
+tombol ini adalah tombol ESD.
+
+fan.png  posisi x :722     y:374
+green_lamp_hidup.png
+green_lamp_mati.png adalah posisi awal akan dianimasikan ke green_lamp hidup
+buat 2 buah dengan fungsi :
+1. lampu purge completed akan menyala setelah 8 detik purge
+2. Lampu heater on akan menyala setelah api main burner hidup selama 5 detik
+
+red_lamp_hidup.png  red lamp adalah lampu alarm, akan hidup jika ada fault pada sequence atau parameter. lampu ini hanya bisa mati jika tombol reset ditekan.
+
+red_lamp_mati.png adalah posisi awal akan dianimasikan ke red_lamp hidup
+valve_closed.png 4 buah, dan 2 buah dengan rotasi 90 derajat
+valve_open.png
+
+valve_closed akan dianimasikan jadi valve_open
+button_down akan dianimasikan jadi button_up
+api_pilot akan dianimasikan membesar mengecil seperti api yang hidup
+api_burner akan dianimasikan membesar mengecil seperti api yang hidup
+actuator akan dianimasikan turun dan naik, turun menutup naik membuka
+actuator yang dirotasikan akan bergerak kiri dan kanan, kekanan menutup, kekiri membuka
+
+button_red_up.png akan dianimasikan jadi button_red_down.png jika ditekan.
+button ini adalah ESD yang akan mematikan semua sequence animasi jika ditekan sekali. dan tombol lain tidak akan berfungsi kecuali jika ditekan tombol reset. jika tombol reset ditekan maka semua status Kembali ke asal.
+fan.png akan memiliki animasi berputar, jika tombol purge ditekan
+
+status awal :
+4 valve tertutup 2 jalur pilot dan 2 jalur main burner, sedangkan 2 valve yang dirotasikan 90 derajat adalah valve blowdown yang pada saat awal posisinya membuka. gambar api belum ada dan fan masih diam lampu indicator di panel masih belum ada yang menyala.kemudian tombol purge ditekan.
+
+urutan penekanan tombol untuk startadalah :
+1. purge
+2. pilot
+3. main burner
+
+tombol pilot dan main burner jika ditekan sebelum tombol purge ditekan, tidak akan mentrigger apa-apa hanya menjalankan animasi tombolnya ditekan.
+setelah proses purge selesai. baru tombol pilot bisa ditekan dan mengaktifkan animasi-animasi dan sequence yang ditrigger.begitu seterusnya dengan tombol main burner 
+
